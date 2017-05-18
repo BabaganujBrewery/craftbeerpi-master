@@ -1,0 +1,38 @@
+<div class="modal-header">
+    <h4>
+        {{ 'FERMENTER_STEP_HEADLINE' | translate }}
+    </h4>
+</div>
+<div class="modal-body">
+    <form class="form" name="myform" novalidate>
+        <div class="form-group">
+            <label>{{ 'NAME' | translate }}</label>
+            <input type="text" ng-model="item.name" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label>{{ 'TARGET_TEMP_IN' | translate }} °{{ config["UNIT"] }}</label>
+            <input type="number" ng-model="item.temp" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>{{ 'DAYS' | translate }}</label>
+            <input type="number" ng-model="item.days" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>{{ 'HOUERS' | translate }}</label>
+            <input type="number" ng-model="item.hours" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>{{ 'MINUTES' | translate }}</label>
+            <input type="number" ng-model="item.minutes" class="form-control">
+        </div>
+
+    </form>
+</div>
+</div>
+
+<div class="modal-footer">
+    <a class="btn btn-default" href="" ng-click="cancel()"><i class="fa fa-times-circle"></i></a>
+    <a class="btn btn-danger" ng-if="edit" ng-click="delete()"> <i class="fa fa-trash"></i></a>
+    <button class="btn btn-success" ng-click="ok()" ng-disabled="myform.$invalid"><i class="fa fa-check-circle"></i></button>
+
+</div>

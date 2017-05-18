@@ -1,0 +1,176 @@
+<div ng-controller="HardwareOverviewController">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{ 'HEATER' | translate }}
+                    <div class="btn-group pull-right" role="group">
+                        <a ng-click="createHardware('H')" uib-tooltip="{{ 'ADD' | translate }}" class="btn btn-success"
+                           role="group">
+                            <i class="fa fa-plus"></i></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <table class="table" style="font-size: 1em">
+                    <thead>
+                    <td>{{ 'NAME' | translate }}</td>
+                    <td>{{ 'VISIBILITY' | translate }}</td>
+                    <td>{{ 'SWITCH' | translate }}</td>
+                    </thead>
+                    <tr ng-repeat="item in heater track by $index">
+                        <td>
+                            <a ng-click="edit(item)">{{ item.name }}</a>
+                        </td>
+                        <td>
+                            <i class="fa fa-eye" ng-if="item.config.hide == false"></i>
+                            <i class="fa fa-eye-slash" ng-if="item.config.hide"></i>
+                        </td>
+                        <td>
+                            {{ item.config.switch }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{ 'AGITATOR' | translate }}
+                    <div class="btn-group pull-right" role="group">
+                        <a ng-click="createHardware('A')" uib-tooltip="{{ 'ADD' | translate }}" class="btn btn-success"
+                           role="group">
+                            <i class="fa fa-plus"></i></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <table class="table" style="font-size: 1em">
+                    <thead>
+                    <td>{{ 'NAME' | translate }}</td>
+                    <td>{{ 'VISIBILITY' | translate }}</td>
+                    <td>{{ 'SWITCH' | translate }}</td>
+                    </thead>
+                    <tr ng-repeat="item in agitator track by $index">
+
+                        <td>
+                            <a ng-click="edit(item)">{{ item.name }}</a>
+                        </td>
+
+                        <td>
+                            <i class="fa fa-eye" ng-if="item.config.hide == false"></i>
+                            <i class="fa fa-eye-slash" ng-if="item.config.hide"></i>
+                        </td>
+                        <td>
+                            {{ item.config.switch }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{ 'PUMP' | translate }}
+                    <div class="btn-group pull-right" role="group">
+                        <a ng-click="createHardware('P')" uib-tooltip="{{ 'ADD' | translate }}" class="btn btn-success"
+                           role="group">
+                            <i class="fa fa-plus"></i></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <table class="table" style="font-size: 1em">
+                    <thead>
+                    <td>{{ 'NAME' | translate }}</td>
+
+                    <td>{{ 'VISIBILITY' | translate }}</td>
+                    <td>{{ 'SWITCH' | translate }}</td>
+                    </thead>
+                    <tr ng-repeat="item in pump track by $index">
+
+                        <td>
+                            <a ng-click="edit(item)">{{ item.name }}</a>
+                        </td>
+
+                        <td>
+                            <i class="fa fa-eye" ng-if="item.config.hide == false"></i>
+                            <i class="fa fa-eye-slash" ng-if="item.config.hide"></i>
+                        </td>
+                        <td>
+                            {{ item.config.switch }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{ 'THERMOMETER' | translate }}
+                    <div class="btn-group pull-right" role="group">
+                        <a ng-click="createHardware('T')" uib-tooltip="{{ 'ADD' | translate }}" class="btn btn-success"
+                           role="group">
+                            <i class="fa fa-plus"></i></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <table class="table" style="font-size: 1em">
+                    <tr>
+                        <td>{{ 'Name' | translate }}</td>
+                        <td>{{ 'SENSOR' | translate }}</td>
+                        <td>{{ 'OFFSET' | translate }}</td>
+                        <td>{{ 'VISIBILITY' | translate }}</td>
+
+                    </tr>
+                    <tr ng-repeat="item in thermometer track by $index">
+                        <td><a ng-click="edit(item)">{{ item.name }}</a></td>
+                        <td>{{ item.config.thermometer.id }}</td>
+                        <td>{{ item.config.thermometer.offset }}</td>
+                        <td><i class="fa fa-eye" ng-if="item.config.hide == false"></i>
+                            <i class="fa fa-eye-slash" ng-if="item.config.hide"></i></td>
+
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+<!--
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{ 'HYDROMETER' | translate }}
+                    <div class="btn-group pull-right" role="group">
+                        <a ng-click="createHydrometer('S')" uib-tooltip="{{ 'ADD' | translate }}" class="btn btn-success"
+                           role="group">
+                            <i class="fa fa-plus"></i></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <table class="table" style="font-size: 1em">
+                    <thead>
+                    <td>{{ 'NAME' | translate }}</td>
+                    </thead>
+                    <tr ng-repeat="item in hydrometers track by $index">
+                        <td>
+                            <a ng-click="editHydrometer(item)">{{ item.name }}</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+-->
+
+    </div>
+
+
+</div>

@@ -1,0 +1,10 @@
+<div class="row" ng-controller="DashboardHardwareController">
+    <div class="col-xs-3 col-sm-4 col-md-4 col-lg-4 pad" style="padding-bottom: 5px" ng-repeat="p in thermometers" ng-if="p.config.hide != true">
+    <div class="panel panel-default text-center" style="font-size: 1.8em; padding: 10px">
+        <div><i class="wi wi-thermometer"></i> {{ p.id | get_temp:temps }}°{{ config["UNIT"] }}</div>
+        <div class="text-muted" style="font-size: 0.5em;">
+            {{ p.name }}
+        </div>
+    </div>
+</div>
+</div>

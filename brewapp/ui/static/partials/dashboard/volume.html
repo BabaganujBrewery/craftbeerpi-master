@@ -1,0 +1,31 @@
+<div class="modal-header" >
+    <h4 class="modal-title"></i>{{ 'CALC_VOLUME' | translate}} {{kettle.name}}</h4>
+</div>
+<div class="modal-body">
+
+
+<div class="form-group">
+  <label>{{ 'HEIGHT' | translate}}:</label>
+  {{kettle.height}} cm
+</div>
+<div class="form-group">
+  <label>{{ 'DIAMETER' | translate}}:</label>
+  {{kettle.diameter}} cm
+</div>
+<div class="form-group">
+  <label>{{ 'MAX_VOL' | translate}}:</label>
+  {{maxvolume()}} {{ 'LITRE' | translate}}
+</div>
+<div class="form-group">
+  <label>{{ 'FREE_CM_TOP' | translate}}:</label>
+  <input type="number" ng-model="free"  class="form-control">
+</div>
+
+<div class="form-group">
+  <label>{{ 'CURR_VOL' | translate}}:</label>
+  {{volume()}} {{ 'LITRE' | translate}}
+</div>
+</div>
+<div class="modal-footer">
+      <button class="btn btn-default" type="button" ng-click="ok()"><i class="fa fa-check"></i></button>
+</div>
